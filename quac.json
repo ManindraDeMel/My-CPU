@@ -123,7 +123,7 @@
         },
         "JPM (reg)": {
             "syntax": "JPM? [<RA:reg>]",
-            "machine": "0101 C 111 RA 0 000",
+            "machine": "0101 C 111 0 RA 0 000",
             "semantic": "PC := mem[RA]",
             "description": "Loads the value from the address stored in RA into the PC. (alias for `LDR PC, [RA]`)",
             "pseudo": true,
