@@ -4,28 +4,6 @@
   <attributes/>
   <visualElements>
     <visualElement>
-      <elementName>RAMDualAccess</elementName>
-      <elementAttributes>
-        <entry>
-          <string>AddrBits</string>
-          <int>16</int>
-        </entry>
-        <entry>
-          <string>isProgramMemory</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>Label</string>
-          <string>RAM</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>16</int>
-        </entry>
-      </elementAttributes>
-      <pos x="280" y="220"/>
-    </visualElement>
-    <visualElement>
       <elementName>Clock</elementName>
       <elementAttributes>
         <entry>
@@ -33,52 +11,7 @@
           <string>CLK</string>
         </entry>
       </elementAttributes>
-      <pos x="20" y="220"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes/>
-      <pos x="260" y="220"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes/>
-      <pos x="260" y="260"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>16</int>
-        </entry>
-      </elementAttributes>
-      <pos x="260" y="280"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>16</int>
-        </entry>
-      </elementAttributes>
-      <pos x="260" y="300"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>16</int>
-        </entry>
-      </elementAttributes>
-      <pos x="260" y="320"/>
-    </visualElement>
-    <visualElement>
-      <elementName>NotConnected</elementName>
-      <elementAttributes/>
-      <pos x="260" y="240"/>
+      <pos x="100" y="420"/>
     </visualElement>
     <visualElement>
       <elementName>Testcase</elementName>
@@ -972,31 +905,16 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
       </elementAttributes>
       <pos x="500" y="720"/>
     </visualElement>
+    <visualElement>
+      <elementName>cpu.dig</elementName>
+      <elementAttributes/>
+      <pos x="140" y="420"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
-      <p1 x="260" y="320"/>
-      <p2 x="280" y="320"/>
-    </wire>
-    <wire>
-      <p1 x="260" y="240"/>
-      <p2 x="280" y="240"/>
-    </wire>
-    <wire>
-      <p1 x="260" y="260"/>
-      <p2 x="280" y="260"/>
-    </wire>
-    <wire>
-      <p1 x="260" y="280"/>
-      <p2 x="280" y="280"/>
-    </wire>
-    <wire>
-      <p1 x="260" y="300"/>
-      <p2 x="280" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="260" y="220"/>
-      <p2 x="280" y="220"/>
+      <p1 x="100" y="420"/>
+      <p2 x="140" y="420"/>
     </wire>
   </wires>
   <measurementOrdering/>
