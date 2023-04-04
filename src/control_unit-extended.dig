@@ -639,11 +639,11 @@ end loop
       <elementAttributes>
         <entry>
           <string>Input Splitting</string>
-          <string>1,1</string>
+          <string>1,1,1</string>
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>2</string>
+          <string>3</string>
         </entry>
       </elementAttributes>
       <pos x="320" y="700"/>
@@ -1219,6 +1219,10 @@ end loop
       <p2 x="220" y="1060"/>
     </wire>
     <wire>
+      <p1 x="-80" y="740"/>
+      <p2 x="320" y="740"/>
+    </wire>
+    <wire>
       <p1 x="-240" y="360"/>
       <p2 x="-180" y="360"/>
     </wire>
@@ -1420,6 +1424,10 @@ end loop
     </wire>
     <wire>
       <p1 x="-80" y="520"/>
+      <p2 x="-80" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="-80" y="740"/>
       <p2 x="-80" y="840"/>
     </wire>
     <wire>
