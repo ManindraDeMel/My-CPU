@@ -661,20 +661,6 @@ end loop</dataString>
       <pos x="900" y="-280"/>
     </visualElement>
     <visualElement>
-      <elementName>seth.dig</elementName>
-      <elementAttributes>
-        <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
-          <string>Label</string>
-          <string>SETH</string>
-        </entry>
-      </elementAttributes>
-      <pos x="740" y="740"/>
-    </visualElement>
-    <visualElement>
       <elementName>Tunnel</elementName>
       <elementAttributes>
         <entry>
@@ -733,13 +719,18 @@ end loop</dataString>
       <pos x="760" y="740"/>
     </visualElement>
     <visualElement>
-      <elementName>PC.dig</elementName>
+      <elementName>seth-basic.dig</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>PC</string>
+          <string>rotation</string>
+          <rotation rotation="2"/>
         </entry>
       </elementAttributes>
+      <pos x="740" y="740"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PC-basic.dig</elementName>
+      <elementAttributes/>
       <pos x="680" y="480"/>
     </visualElement>
   </visualElements>
