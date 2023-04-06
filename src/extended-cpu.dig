@@ -929,7 +929,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>CLK</string>
         </entry>
       </elementAttributes>
-      <pos x="-400" y="-20"/>
+      <pos x="-400" y="-40"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -939,7 +939,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>CLK</string>
         </entry>
       </elementAttributes>
-      <pos x="-380" y="-20"/>
+      <pos x="-380" y="-40"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -1027,7 +1027,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>INSTR</string>
         </entry>
       </elementAttributes>
-      <pos x="-420" y="60"/>
+      <pos x="-420" y="40"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -1037,7 +1037,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>ALU_RES</string>
         </entry>
       </elementAttributes>
-      <pos x="720" y="280"/>
+      <pos x="740" y="280"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -1131,7 +1131,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>FLAG</string>
         </entry>
       </elementAttributes>
-      <pos x="720" y="300"/>
+      <pos x="740" y="300"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -1169,7 +1169,7 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
           <string>Z_REG</string>
         </entry>
       </elementAttributes>
-      <pos x="-420" y="80"/>
+      <pos x="-420" y="60"/>
     </visualElement>
     <visualElement>
       <elementName>NotConnected</elementName>
@@ -1232,12 +1232,12 @@ Hence the PC is its own register</string>
     <visualElement>
       <elementName>alu-extended.dig</elementName>
       <elementAttributes/>
-      <pos x="520" y="280"/>
+      <pos x="540" y="280"/>
     </visualElement>
     <visualElement>
       <elementName>control_unit-extended.dig</elementName>
       <elementAttributes/>
-      <pos x="-380" y="60"/>
+      <pos x="-380" y="40"/>
     </visualElement>
     <visualElement>
       <elementName>reg_file-extended.dig</elementName>
@@ -1260,35 +1260,31 @@ Hence the PC is its own register</string>
     </wire>
     <wire>
       <p1 x="500" y="320"/>
-      <p2 x="520" y="320"/>
+      <p2 x="540" y="320"/>
     </wire>
     <wire>
       <p1 x="-260" y="160"/>
-      <p2 x="100" y="160"/>
+      <p2 x="-40" y="160"/>
     </wire>
     <wire>
-      <p1 x="100" y="160"/>
+      <p1 x="-40" y="160"/>
       <p2 x="800" y="160"/>
-    </wire>
-    <wire>
-      <p1 x="-260" y="100"/>
-      <p2 x="140" y="100"/>
-    </wire>
-    <wire>
-      <p1 x="140" y="100"/>
-      <p2 x="800" y="100"/>
     </wire>
     <wire>
       <p1 x="160" y="420"/>
       <p2 x="180" y="420"/>
     </wire>
     <wire>
-      <p1 x="-260" y="200"/>
-      <p2 x="440" y="200"/>
+      <p1 x="-260" y="100"/>
+      <p2 x="120" y="100"/>
     </wire>
     <wire>
-      <p1 x="440" y="200"/>
-      <p2 x="800" y="200"/>
+      <p1 x="120" y="100"/>
+      <p2 x="800" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="-400" y="-40"/>
+      <p2 x="-380" y="-40"/>
     </wire>
     <wire>
       <p1 x="-300" y="360"/>
@@ -1307,11 +1303,35 @@ Hence the PC is its own register</string>
       <p2 x="180" y="360"/>
     </wire>
     <wire>
-      <p1 x="-260" y="140"/>
-      <p2 x="480" y="140"/>
+      <p1 x="-420" y="40"/>
+      <p2 x="-400" y="40"/>
     </wire>
     <wire>
-      <p1 x="480" y="140"/>
+      <p1 x="-260" y="40"/>
+      <p2 x="500" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="-400" y="40"/>
+      <p2 x="-380" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="40"/>
+      <p2 x="800" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="200"/>
+      <p2 x="80" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="80" y="200"/>
+      <p2 x="800" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="140"/>
+      <p2 x="100" y="140"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="140"/>
       <p2 x="800" y="140"/>
     </wire>
     <wire>
@@ -1323,23 +1343,19 @@ Hence the PC is its own register</string>
       <p2 x="180" y="300"/>
     </wire>
     <wire>
-      <p1 x="700" y="300"/>
-      <p2 x="720" y="300"/>
+      <p1 x="720" y="300"/>
+      <p2 x="740" y="300"/>
     </wire>
     <wire>
       <p1 x="400" y="300"/>
-      <p2 x="520" y="300"/>
+      <p2 x="540" y="300"/>
     </wire>
     <wire>
       <p1 x="-260" y="80"/>
-      <p2 x="160" y="80"/>
+      <p2 x="140" y="80"/>
     </wire>
     <wire>
-      <p1 x="-420" y="80"/>
-      <p2 x="-380" y="80"/>
-    </wire>
-    <wire>
-      <p1 x="160" y="80"/>
+      <p1 x="140" y="80"/>
       <p2 x="800" y="80"/>
     </wire>
     <wire>
@@ -1348,22 +1364,18 @@ Hence the PC is its own register</string>
     </wire>
     <wire>
       <p1 x="-260" y="240"/>
-      <p2 x="60" y="240"/>
+      <p2 x="520" y="240"/>
     </wire>
     <wire>
-      <p1 x="60" y="240"/>
+      <p1 x="520" y="240"/>
       <p2 x="800" y="240"/>
     </wire>
     <wire>
-      <p1 x="-400" y="-20"/>
-      <p2 x="-380" y="-20"/>
-    </wire>
-    <wire>
       <p1 x="-260" y="180"/>
-      <p2 x="-40" y="180"/>
+      <p2 x="440" y="180"/>
     </wire>
     <wire>
-      <p1 x="-40" y="180"/>
+      <p1 x="440" y="180"/>
       <p2 x="800" y="180"/>
     </wire>
     <wire>
@@ -1379,8 +1391,20 @@ Hence the PC is its own register</string>
       <p2 x="380" y="340"/>
     </wire>
     <wire>
-      <p1 x="700" y="280"/>
-      <p2 x="720" y="280"/>
+      <p1 x="520" y="340"/>
+      <p2 x="540" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="120"/>
+      <p2 x="480" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="120"/>
+      <p2 x="800" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="720" y="280"/>
+      <p2 x="740" y="280"/>
     </wire>
     <wire>
       <p1 x="340" y="280"/>
@@ -1392,19 +1416,31 @@ Hence the PC is its own register</string>
     </wire>
     <wire>
       <p1 x="420" y="280"/>
-      <p2 x="520" y="280"/>
-    </wire>
-    <wire>
-      <p1 x="-260" y="120"/>
-      <p2 x="120" y="120"/>
-    </wire>
-    <wire>
-      <p1 x="120" y="120"/>
-      <p2 x="800" y="120"/>
+      <p2 x="540" y="280"/>
     </wire>
     <wire>
       <p1 x="60" y="440"/>
       <p2 x="180" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="60"/>
+      <p2 x="160" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="-420" y="60"/>
+      <p2 x="-380" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="60"/>
+      <p2 x="800" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="220"/>
+      <p2 x="60" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="60" y="220"/>
+      <p2 x="800" y="220"/>
     </wire>
     <wire>
       <p1 x="-340" y="380"/>
@@ -1415,35 +1451,11 @@ Hence the PC is its own register</string>
       <p2 x="180" y="380"/>
     </wire>
     <wire>
-      <p1 x="-420" y="60"/>
-      <p2 x="-400" y="60"/>
-    </wire>
-    <wire>
-      <p1 x="-260" y="60"/>
-      <p2 x="500" y="60"/>
-    </wire>
-    <wire>
-      <p1 x="500" y="60"/>
-      <p2 x="800" y="60"/>
-    </wire>
-    <wire>
-      <p1 x="-400" y="60"/>
-      <p2 x="-380" y="60"/>
-    </wire>
-    <wire>
-      <p1 x="-260" y="220"/>
-      <p2 x="80" y="220"/>
-    </wire>
-    <wire>
-      <p1 x="80" y="220"/>
-      <p2 x="800" y="220"/>
-    </wire>
-    <wire>
       <p1 x="480" y="440"/>
       <p2 x="480" y="460"/>
     </wire>
     <wire>
-      <p1 x="480" y="140"/>
+      <p1 x="480" y="120"/>
       <p2 x="480" y="380"/>
     </wire>
     <wire>
@@ -1451,7 +1463,7 @@ Hence the PC is its own register</string>
       <p2 x="0" y="440"/>
     </wire>
     <wire>
-      <p1 x="160" y="80"/>
+      <p1 x="160" y="60"/>
       <p2 x="160" y="280"/>
     </wire>
     <wire>
@@ -1459,12 +1471,16 @@ Hence the PC is its own register</string>
       <p2 x="420" y="380"/>
     </wire>
     <wire>
-      <p1 x="100" y="160"/>
+      <p1 x="100" y="140"/>
       <p2 x="100" y="340"/>
     </wire>
     <wire>
-      <p1 x="-40" y="180"/>
+      <p1 x="-40" y="160"/>
       <p2 x="-40" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="240"/>
+      <p2 x="520" y="340"/>
     </wire>
     <wire>
       <p1 x="460" y="360"/>
@@ -1475,7 +1491,7 @@ Hence the PC is its own register</string>
       <p2 x="460" y="460"/>
     </wire>
     <wire>
-      <p1 x="140" y="100"/>
+      <p1 x="140" y="80"/>
       <p2 x="140" y="300"/>
     </wire>
     <wire>
@@ -1483,7 +1499,7 @@ Hence the PC is its own register</string>
       <p2 x="-400" y="360"/>
     </wire>
     <wire>
-      <p1 x="-400" y="60"/>
+      <p1 x="-400" y="40"/>
       <p2 x="-400" y="320"/>
     </wire>
     <wire>
@@ -1491,19 +1507,19 @@ Hence the PC is its own register</string>
       <p2 x="400" y="380"/>
     </wire>
     <wire>
-      <p1 x="80" y="220"/>
+      <p1 x="80" y="200"/>
       <p2 x="80" y="400"/>
     </wire>
     <wire>
-      <p1 x="500" y="60"/>
+      <p1 x="500" y="40"/>
       <p2 x="500" y="320"/>
     </wire>
     <wire>
-      <p1 x="440" y="200"/>
+      <p1 x="440" y="180"/>
       <p2 x="440" y="380"/>
     </wire>
     <wire>
-      <p1 x="120" y="120"/>
+      <p1 x="120" y="100"/>
       <p2 x="120" y="320"/>
     </wire>
     <wire>
@@ -1511,7 +1527,7 @@ Hence the PC is its own register</string>
       <p2 x="380" y="380"/>
     </wire>
     <wire>
-      <p1 x="60" y="240"/>
+      <p1 x="60" y="220"/>
       <p2 x="60" y="440"/>
     </wire>
   </wires>
