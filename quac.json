@@ -41,11 +41,27 @@
             "pseudo": false,
             "class": "mem"
         },
+        "STR (imm)": {
+            "syntax": "STR? <RD:reg>, <IMM7:uint7>",
+            "machine": "0111 C RD 0 IMM7",
+            "semantic": "mem[IMM7] := RD",
+            "description": "Stores the value in RD in memory at the address at IMM7",
+            "pseudo": false,
+            "class": "mem"
+        },
         "LDR (reg)": {
             "syntax": "LDR? <RD:reg>, [<RA:reg>]",
             "machine": "0101 C RD 0 RA 0 000",
             "semantic": "RD := mem[RA]",
             "description": "Loads the 16 bit value at the address in RA into RD",
+            "pseudo": false,
+            "class": "mem"
+        },
+        "LDR (imm)": {
+            "syntax": "LDR? <RD:reg>, <IMM7:uint7>",
+            "machine": "0111 C RD 1 IMM7",
+            "semantic": "RD := mem[IMM7]",
+            "description": "Loads the 16 bit value from the address IMM7 into RD",
             "pseudo": false,
             "class": "mem"
         },
@@ -57,11 +73,27 @@
             "pseudo": false,
             "class": "alu"
         },
+        "ADD (imm)": {
+            "syntax": "ADD? <RD:reg>, <IMM7:uint7>",
+            "machine": "0011 C RD 0 IMM7",
+            "semantic": "RD := RD + IMM7",
+            "description": "Adds IMM7 to RD",
+            "pseudo": false,
+            "class": "alu"
+        },
         "SUB (reg)": {
             "syntax": "SUB? {<RD:reg?RA>, } <RA:reg>, <RB:reg>",
             "machine": "1001 C RD 0 RA 0 RB",
             "semantic": "RD := RA - RB",
             "description": "Subtracts the value in RB from the value in RA and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "SUB (imm)": {
+            "syntax": "SUB? <RD:reg>, <IMM7:uint7>",
+            "machine": "0011 C RD 1 IMM7",
+            "semantic": "RD := RD - IMM7",
+            "description": "subtracts IMM7 from RD",
             "pseudo": false,
             "class": "alu"
         },
@@ -78,6 +110,38 @@
             "machine": "1011 C RD 0 RA 0 RB",
             "semantic": "RD := RA | RB",
             "description": "Bitwise ORs the values in RA and RB and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "XOR (reg)": {
+            "syntax": "XOR? {<RD:reg?RA>, } <RA:reg>, <RB:reg>",
+            "machine": "1100 C RD 0 RA 0 RB",
+            "semantic": "RD := RA ^ RB",
+            "description": "Bitwise XORs the values in RA and RB and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "NOT (reg)": {
+            "syntax": "NOT? {<RD:reg?RA>, } <RA:reg>",
+            "machine": "1101 C RD 0 RA 0 000",
+            "semantic": "RD := ~RA",
+            "description": "Bitwise NOTs the value in RA and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "SHIFT (reg)": {
+            "syntax": "SHIFT? {<RD:reg?RA>, } <RA:reg>, <RB:reg>, <D:uint1>",
+            "machine": "1110 C RD 0 RA D RB",
+            "semantic": "RD := RA << RB || RA >> RB",
+            "description": "Shifts the value in RA left (0) or right (1) by the number of bits in RB and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "NEG (reg)": {
+            "syntax": "NEG? {<RD:reg?RA>, } <RA:reg>",
+            "machine": "1111 C RD 0 RA 0 000",
+            "semantic": "RD := -RA",
+            "description": "Negates the value in RA and stores the result in RD",
             "pseudo": false,
             "class": "alu"
         },

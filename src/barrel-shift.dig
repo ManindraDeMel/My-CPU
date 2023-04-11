@@ -41,7 +41,7 @@
       <elementAttributes>
         <entry>
           <string>Description</string>
-          <string>Number of bits to be shifted (max of 16)</string>
+          <string>Number of bits to be shifted (max of 4)</string>
         </entry>
         <entry>
           <string>rotation</string>
