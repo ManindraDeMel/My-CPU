@@ -172,6 +172,20 @@ end loop</dataString>
       </elementAttributes>
       <pos x="1080" y="120"/>
     </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>We can only shift a maximum of 16 bits!!!!</string>
+        </entry>
+        <entry>
+          <string>RectHeight</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1060" y="20"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
