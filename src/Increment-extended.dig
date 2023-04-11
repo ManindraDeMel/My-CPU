@@ -447,6 +447,144 @@
       </elementAttributes>
       <pos x="600" y="1240"/>
     </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Isolate the I-MEM instructions</string>
+        </entry>
+        <entry>
+          <string>RectHeight</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>18</int>
+        </entry>
+      </elementAttributes>
+      <pos x="300" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>17</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Choose between ALU IMM or I-MEM IMM output</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>15</int>
+        </entry>
+      </elementAttributes>
+      <pos x="680" y="1040"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectBottom</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>RectHeight</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Choosen between STR or LDR</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="560" y="1160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>5</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>B needs to flip to A becuase of how the ALU is made</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>42</int>
+        </entry>
+        <entry>
+          <string>RectRight</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="300" y="640"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>9</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>More flips for the STR instruction to get the correct ADDRESS  &amp; VALUE</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>63</int>
+        </entry>
+        <entry>
+          <string>RectRight</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="780"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>5</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Choose between the normal input / Imm</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>18</int>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Choose between the default A / IMM for LDR</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>38</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-380" y="980"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
