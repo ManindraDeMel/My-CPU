@@ -1180,39 +1180,13 @@ program(0x0100,0x0200,0x0316,0x0401,0x8000,0x8a04,0xb944,0x9040,0x5930,0x9000,0x
         </entry>
         <entry>
           <string>Description</string>
-          <string>You need to consider where to physically locate the flag register.
-
-Option 1: Top-level schematic
-If so, how do we read from it when executing an instruction?
-Option 2: Inside the register file
-If so, how does the ALU write to it after each instruction?
-
-You might need to make some changes to the register file to allow the ALU to write, and the CPU to read from the flag register.
-
-Also, you likely need to add another 1-bit control signal (we suggest the name FLEN) that controls 
-if the flag register is updated (written) for the currently executing instruction. Make the necessary changes to the control unit.
-
-You should modify the control unit test cases to also test FLEN.</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-1760" y="-80"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Text</elementName>
-      <elementAttributes>
-        <entry>
-          <string>textFontSize</string>
-          <int>16</int>
-        </entry>
-        <entry>
-          <string>Description</string>
           <string>Although the pc register is logically part of the register file, it is read and written on every cycle independent of the normal register file operation. 
 A question arises if we should build pc as a standalone register or as part of the register file. Consider the pros and cons of both approaches in your implementation. 
 Option 1: pc inside the register file How do we interface the pc register with memory for fetching instructions? 
 Option 2: pc outside the register file How do instructions read from and write to the pc? 
 Option 3: pc is somewhere else We leave this to your creativity!
 
-I Put the PC in its own component. I did this because i feel like the PC&apos;s purpose is fundementally different to all the other registers. 
+I Put the PC in its own component (in the reg file). I did this because i feel like the PC&apos;s purpose is fundementally different to all the other registers. 
 The PC is always either incrementing or loading a new value, (always written to). Where as other registers (including the flag register) only sometimes load.
 Hence the PC is its own register</string>
         </entry>
