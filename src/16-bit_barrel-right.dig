@@ -827,6 +827,78 @@ end loop</dataString>
       </elementAttributes>
       <pos x="920" y="-360"/>
     </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Shift right 8 bits</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>91</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-100" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Shift right 4 bits</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>91</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-100" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Shift right 2 bits</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>91</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-100" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Shift right 1 bits</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>91</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-100" y="760"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
