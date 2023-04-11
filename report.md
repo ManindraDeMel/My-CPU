@@ -4,50 +4,48 @@ In this report, we will discuss the design, implementation, and analysis of a cu
 
 ### General benefits
 
-- Additional ALU operations: The extended ISA provides more ALU operations, allowing for a wider range of arithmetic and logical tasks to be performed. This enhances the capabilities of the custom CPU and enables it to handle more complex tasks more efficiently.
+- Additional ALU operations: The extended ISA offers more arithmetic and logical operations, broadening the CPU's capabilities and enabling more efficient task execution.
 
-- Logical shifts: By using an extra bit for direction in the shift instructions, the custom CPU can perform both left and right shifts, providing greater flexibility in data manipulation. This feature allows for more efficient bit-level operations and can lead to improved performance in certain tasks.
+- Logical shifts: The extra bit for direction allows both left and right shifts, providing greater flexibility in data manipulation and improved performance in certain tasks.
 
-- ALU and Memory immediates: The extended ISA supports immediate values for both ALU and Memory instructions, enabling the custom CPU to perform operations with constant values more efficiently. This feature reduces the need to load values into registers before performing an operation, thus saving clock cycles and improving performance.
+- ALU immediates && I-Mode Memory Instructions: Immediate values support for ALU and Memory instructions leads to more efficient operations with constant values, saving clock cycles and enhancing performance.
 
-### Limitations
-
-- Backward compatibility: The requirement to maintain backward compatibility with the base ISA imposes certain limitations on the design of the custom CPU. It restricts the addition of new instructions or modifications to existing instructions, as doing so might break compatibility with existing programs written for the base ISA. This constraint might result in a suboptimal design for certain tasks or limit the overall performance improvements that could be achieved with a completely new ISA.
+- PC-relative jump: The inclusion of a PC-relative jump instruction allows for more flexible control flow by adjusting the program counter based on its current value. This feature simplifies branching and improves code efficiency.
 
 ## Implementation
 
 The custom CPU uses the following extended ISA while maintaining backward compatibility with the base ISA:
 
-| Syntax                       | Semantic           | Machine Code                      |
-| ---------------------------- | ------------------ | --------------------------------- |
-| I-Format Instructions        |
-| `movl rd, imm8`              | `rd ≔ #imm8`       | `0000 <cond> <rd> <imm8>`         |
-| `seth rd, imm8`              | `rd ≔ (#imm8 << 8) | (rd & 0xff)`|`0001 <cond> <rd> <imm8>`|
-| I-Format ALU Instructions    |
-| `add rd, imm7`               | `rd ≔ rd + #imm8`  | `0011 <cond> <rd> 0 <imm7>`  |
-| `sub rd, imm7`               | `rd ≔ rd - #imm8`  | `0011 <cond> <rd> 1 <imm7>`  |
-| R-Format Memory Instructions |
-| `str rd, [ra]`               | `[ra] ≔ rd`        | `0100 <cond> <rd> 0 <ra> 0000`    |
-| `ldr rd, [ra]`               | `rd ≔ [ra]`        | `0101 <cond> <rd> 0 <ra> 0000`    |
-| `str rd, [imm7],`               | `[rd] ≔ imm7`      | `0111 <cond> <rd> 0 <imm7>`       |
-| `ldr rd, [imm7]`               | `rd ≔ [imm7]`      | `0111 <cond> <rd> 1 <imm7>`       |
-| R-Format ALU Instructions    |
-| `add rd, ra, rb`             | `rd ≔ ra + rb`     | `1000 <cond> <rd> 0 <ra> 0 <rb>`  |
-| `sub rd, ra, rb`             | `rd ≔ ra - rb`     | `1001 <cond> <rd> 0 <ra> 0 <rb>`  |
-| `and rd, ra, rb`             | `rd ≔ ra & rb`     | `1010  <cond> <rd> 0 <ra> 0 <rb>` |
-| `orr  rd, ra, rb`            | `rd ≔ ra | rb`     | `1011  <cond> <rd> 0 <ra> 0 <rb>` |
-| `xor  rd, ra, rb`            | `rd ≔ ra ⊕ rb`    | `1100  <cond> <rd> 0 <ra> 0 <rb>` |
-| `not  rd, ra`                | `rd ≔ ~ra`         | `1101  <cond> <rd> 0 <ra> 0000`  |
-| `shift rd, ra, rb`           | `rd ≔ ra << rb || rd ≔ ra >> rb`  | `1110 <cond> <rd> 0 <ra> <direction> <rb>` |
-| `neg rd, ra`                 | `rd ≔ -1 x ra`     | `1111  <cond> <rd> 0 <ra> 0000` |
+![isa image](assets/extended_isa.png)
 
-One of the key improvements in the extended ISA over the base ISA is the inclusion of more ALU operations, such as XOR, NOT, and NEG. This extended set of operations allows the CPU to perform a wider range of tasks more efficiently, enabling complex arithmetic and bitwise operations that can significantly enhance overall performance.
+One of the key improvements in the extended ISA over the base ISA is the inclusion of more ALU operations, such as XOR, NOT, SHIFT and NEG. This extended set of operations allows the CPU to perform a wider range of tasks more efficiently, enabling complex arithmetic and bitwise operations that can significantly enhance overall performance.
 
 In addition to the expanded ALU operations, the extended ISA introduces logical shifts with an extra bit to indicate the direction. This provides a more flexible approach to shifting bits in registers, ultimately making it easier to perform tasks such as multiplication, division, or data manipulation.
 
 Another benefit of the extended ISA is the inclusion of both ALU and memory immediates. The ability to use immediate values in ALU and memory instructions simplifies the instruction set and reduces the need for additional load instructions to access immediate values. This can lead to a more efficient execution of the program, as fewer instructions are needed for certain tasks.
 
-## Analysis
+Finally for PC relative jump. This utilizes the ALU immediates from before to make the following new `pseudo` instructions
+
+```json
+"JPRB": {
+    "syntax": "JPRB? <IMM7:uint7>",
+    "machine": "0011 C 111 1 IMM7",
+    "semantic": "PC := PC - IMM7",
+    "description": "Jump the PC backward relative to the PC's current value. (alias for `ADD PC, PC, IMM7`)",
+    "pseudo": true,
+    "class": "imm"
+},
+"JPRF": {
+    "syntax": "JPRF? <IMM7:uint7>",
+    "machine": "0011 C 111 0 IMM7",
+    "semantic": "PC := PC + IMM7",
+    "description": "Jump the PC forward relative to the PC's current value. (alias for `ADD PC, PC, IMM7`)",
+    "pseudo": true,
+    "class": "imm"
+}
+```
+
+## Design
 
 The custom CPU design is based on an extended ISA that offers a richer set of ALU operations, logical shifts with direction control, and support for both ALU and memory immediates. These enhancements significantly improve the CPU's ability to execute a wide variety of tasks more efficiently, while maintaining backward compatibility with the base ISA.
 
@@ -58,3 +56,15 @@ The control unit was updated to handle the new instructions and control signals 
 The instruction decoder was also modified to recognize and decode the new instructions introduced by the extended ISA. This required the addition of new decoding logic and updates to the existing decoding circuits to ensure proper identification and execution of the new instructions.
 
 Throughout the design process, careful consideration was given to the trade-offs between increased functionality, performance, and complexity. The result is a custom CPU that successfully incorporates the benefits of the extended ISA while maintaining backward compatibility with the base ISA, providing a versatile and powerful solution for a wide range of tasks.
+
+## Analysis
+
+In the process of extending the ISA, we faced certain limitations due to the design choices made. These limitations prevented us from further expanding the capabilities of the custom CPU and implementing additional features.
+
+Limited register files: Using bits for the shifter and immediates in the extended ISA resulted in a trade-off where we could not add significantly more register files. This constraint impacted the custom CPU's ability to handle a larger number of variables and intermediate values simultaneously, which in turn could affect the overall performance and efficiency of the CPU.
+
+Constraints on new extensions: The design decisions made to extend the ISA with new features and improvements limited the available options for implementing other potential extensions. For instance, using bits for the shifter and immediates consumed part of the opcode space, reducing the number of available opcodes for future instructions. This restriction makes it challenging to expand the ISA further, especially when trying to maintain backward compatibility with the base ISA.
+
+Backward compatibility: As mentioned earlier, maintaining compatibility with the base ISA imposed restrictions on the addition of new instructions or modifications to existing instructions. This limitation might have influenced the design choices made while extending the ISA, potentially leading to suboptimal designs or limiting the overall performance improvements that could be achieved.
+
+Despite these limitations, the extended ISA successfully provides additional ALU operations, logical shifts, and support for ALU and Memory immediates, which contribute to the custom CPU's enhanced performance and flexibility. However, it is essential to acknowledge the trade-offs made in the design process to achieve these improvements while understanding the impact of these choices on the CPU's overall capabilities.

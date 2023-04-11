@@ -9,8 +9,8 @@
 | R-Format Memory Instructions |
 | `str rd, [ra]`               | `[ra] ≔ rd`        | `0100 <cond> <rd> 0 <ra> 0000`    |
 | `ldr rd, [ra]`               | `rd ≔ [ra]`        | `0101 <cond> <rd> 0 <ra> 0000`    |
-| `str rd, [imm7],`               | `[rd] ≔ imm7`      | `0111 <cond> <rd> 0 <imm7>`       |
-| `ldr rd, [imm7]`               | `rd ≔ [imm7]`      | `0111 <cond> <rd> 1 <imm7>`       |
+| `str rd, [imm7],`            | `[rd] ≔ imm7`      | `0111 <cond> <rd> 0 <imm7>`       |
+| `ldr rd, [imm7]`             | `rd ≔ [imm7]`      | `0111 <cond> <rd> 1 <imm7>`       |
 | R-Format ALU Instructions    |
 | `add rd, ra, rb`             | `rd ≔ ra + rb`     | `1000 <cond> <rd> 0 <ra> 0 <rb>`  |
 | `sub rd, ra, rb`             | `rd ≔ ra - rb`     | `1001 <cond> <rd> 0 <ra> 0 <rb>`  |

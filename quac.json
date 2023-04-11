@@ -200,6 +200,22 @@
             "description": "Jump to the given immediate value address. (alias for `MOVL PC, IMM8`)",
             "pseudo": true,
             "class": "imm"
+        },
+        "JPRB": {
+            "syntax": "JPRB? <IMM7:uint7>",
+            "machine": "0011 C 111 1 IMM7",
+            "semantic": "PC := PC - IMM7",
+            "description": "Jump the PC backward relative to the PC's current value. (alias for `ADD PC, PC, IMM7`)",
+            "pseudo": true,
+            "class": "imm"
+        },
+        "JPRF": {
+            "syntax": "JPRF? <IMM7:uint7>",
+            "machine": "0011 C 111 0 IMM7",
+            "semantic": "PC := PC + IMM7",
+            "description": "Jump the PC forward relative to the PC's current value. (alias for `ADD PC, PC, IMM7`)",
+            "pseudo": true,
+            "class": "imm"
         }
     }
 }
