@@ -1,5 +1,7 @@
 # Custom CPU Design Report with Extended ISA
 
+_Manindra de Mel ~ U7156805_
+
 In this report, we will discuss the design, implementation, and analysis of a custom CPU built using a circuit design program. The custom CPU meets the assignment specifications by providing a unique architecture tailored to optimize performance and efficiency. This custom CPU extends the base ISA with additional ALU operations, logical shifts, and support for both ALU, I-Mode Memory Instructions and PC relative jumps, while maintaining backward compatibility with the base ISA.
 
 ## Implementation

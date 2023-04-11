@@ -922,6 +922,32 @@
       </elementAttributes>
       <pos x="960" y="760"/>
     </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectBottom</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>textFontSize</string>
+          <int>20</int>
+        </entry>
+        <entry>
+          <string>RectHeight</string>
+          <int>19</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>If the IMM bit is low, then its a ALU IMM instruction which starts with 0. Then just choose the add/sub method</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>13</int>
+        </entry>
+      </elementAttributes>
+      <pos x="780" y="520"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>

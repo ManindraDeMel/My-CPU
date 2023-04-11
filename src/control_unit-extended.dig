@@ -1311,10 +1311,10 @@ only on ALU OP codes (1 0 x x)</string>
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>34</int>
+          <int>69</int>
         </entry>
       </elementAttributes>
-      <pos x="-180" y="620"/>
+      <pos x="-880" y="620"/>
     </visualElement>
     <visualElement>
       <elementName>Or</elementName>
@@ -1557,7 +1557,7 @@ only on ALU OP codes (1 0 x x)</string>
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>14</int>
+          <int>26</int>
         </entry>
         <entry>
           <string>RectRight</string>
@@ -1580,6 +1580,60 @@ only on ALU OP codes (1 0 x x)</string>
       <elementName>Not</elementName>
       <elementAttributes/>
       <pos x="-20" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>12</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Make RD == RB on ALU/MEM IMM &amp;&amp; MEM operations</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>63</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-940" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>25</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Isolate the ALU/MEM IMM instructions</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>13</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1000" y="1580"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Rectangle</elementName>
+      <elementAttributes>
+        <entry>
+          <string>RectHeight</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Isolate the ALU/MEM IMM instructions</string>
+        </entry>
+        <entry>
+          <string>RectWidth</string>
+          <int>13</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1000" y="2300"/>
     </visualElement>
   </visualElements>
   <wires>
