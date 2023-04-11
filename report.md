@@ -1,6 +1,6 @@
 # Custom CPU Design Report with Extended ISA
 
-In this report, we will discuss the design, implementation, and analysis of a custom CPU built using a circuit design program. The custom CPU meets the assignment specifications by providing a unique architecture tailored to optimize performance and efficiency. This custom CPU extends the base ISA with additional ALU operations, logical shifts, and support for both ALU and Memory immediates, while maintaining backward compatibility with the base ISA.
+In this report, we will discuss the design, implementation, and analysis of a custom CPU built using a circuit design program. The custom CPU meets the assignment specifications by providing a unique architecture tailored to optimize performance and efficiency. This custom CPU extends the base ISA with additional ALU operations, logical shifts, and support for both ALU, I-Mode Memory Instructions and PC relative jumps, while maintaining backward compatibility with the base ISA.
 
 ### General benefits
 
@@ -22,7 +22,9 @@ One of the key improvements in the extended ISA over the base ISA is the inclusi
 
 In addition to the expanded ALU operations, the extended ISA introduces logical shifts with an extra bit to indicate the direction. This provides a more flexible approach to shifting bits in registers, ultimately making it easier to perform tasks such as multiplication, division, or data manipulation.
 
-Another benefit of the extended ISA is the inclusion of both ALU and memory immediates. The ability to use immediate values in ALU and memory instructions simplifies the instruction set and reduces the need for additional load instructions to access immediate values. This can lead to a more efficient execution of the program, as fewer instructions are needed for certain tasks.
+![Left shift image](assets/left-shift.png)
+
+Another benefit of the extended ISA is the inclusion of both ALU and I-Mode Memory Instructions. The ability to use immediate values in ALU and memory instructions simplifies the instruction set and reduces the need for additional load instructions to access immediate values. This can lead to a more efficient execution of the program, as fewer instructions are needed for certain tasks.
 
 Finally for PC relative jump. This utilizes the ALU immediates from before to make the following new `pseudo` instructions
 
