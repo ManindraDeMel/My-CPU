@@ -2,16 +2,6 @@
 
 In this report, we will discuss the design, implementation, and analysis of a custom CPU built using a circuit design program. The custom CPU meets the assignment specifications by providing a unique architecture tailored to optimize performance and efficiency. This custom CPU extends the base ISA with additional ALU operations, logical shifts, and support for both ALU, I-Mode Memory Instructions and PC relative jumps, while maintaining backward compatibility with the base ISA.
 
-### General benefits
-
-- Additional ALU operations: The extended ISA offers more arithmetic and logical operations, broadening the CPU's capabilities and enabling more efficient task execution.
-
-- Logical shifts: The extra bit for direction allows both left and right shifts, providing greater flexibility in data manipulation and improved performance in certain tasks.
-
-- ALU immediates && I-Mode Memory Instructions: Immediate values support for ALU and Memory instructions leads to more efficient operations with constant values, saving clock cycles and enhancing performance.
-
-- PC-relative jump: The inclusion of a PC-relative jump instruction allows for more flexible control flow by adjusting the program counter based on its current value. This feature simplifies branching and improves code efficiency.
-
 ## Implementation
 
 The custom CPU uses the following extended ISA while maintaining backward compatibility with the base ISA:
@@ -51,13 +41,25 @@ Finally for PC relative jump. This utilizes the ALU immediates from before to ma
 
 A key aspect of the design process was the use of subcircuits for encapsulation. This approach allowed for the organization of the various components and functionalities into smaller, more manageable units, ultimately resulting in a cleaner and more modular design. The use of subcircuits also made it easier to maintain and troubleshoot the custom CPU, as each functional block could be isolated and tested independently.
 
-Another important design consideration was the adoption of a BUS-like technique for wiring and interconnections between components. This method enabled efficient communication between different parts of the custom CPU, reducing signal propagation delays and minimizing the impact of long wire lengths on performance. The BUS-like approach also contributed to a more organized layout, making it easier to follow the flow of data and control signals throughout the CPU.
+Another important design consideration was the adoption of a BUS technique for wiring and interconnections between components. This method enabled efficient communication between different parts of the custom CPU, reducing signal propagation delays and minimizing the impact of long wire lengths on performance. The BUS approach also contributed to a more organized layout, making it easier to follow the flow of data and control signals throughout the CPU.
 
 Consistent use of terminals was another essential aspect of the custom CPU design. Terminals were employed for wires that had to loop back as well as for control lines, ensuring that connections were made correctly and reducing the risk of miswiring. This practice not only streamlined the control signal routing but also minimized duplicate wires, resulting in a cleaner and more organized layout. Consequently, this contributed to the clarity and simplicity of the custom CPU design, enhancing maintainability and easing the debugging process.
 
 ## Analysis
 
-In the process of extending the ISA, we faced certain limitations due to the design choices made. These limitations prevented us from further expanding the capabilities of the custom CPU and implementing additional features.
+In the process of extending the ISA, we successfully introduced several benefits, such as additional ALU operations, logical shifts, and support for ALU and I-Mode Memory Instructions, contributing to the custom CPU's enhanced performance and flexibility. However, we also faced certain limitations due to the design choices made. These limitations prevented us from further expanding the capabilities of the custom CPU and implementing additional features.
+
+### General benefits
+
+- Additional ALU operations: The extended ISA offers more arithmetic and logical operations, broadening the CPU's capabilities and enabling more efficient task execution.
+
+- Logical shifts: The extra bit for direction allows both left and right shifts, providing greater flexibility in data manipulation and improved performance in certain tasks.
+
+- ALU immediates && I-Mode Memory Instructions: Immediate values support for ALU and Memory instructions leads to more efficient operations with constant values, saving clock cycles and enhancing performance.
+
+- PC-relative jump: The inclusion of a PC-relative jump instruction allows for more flexible control flow by adjusting the program counter based on its current value. This feature simplifies branching and improves code efficiency.
+
+### Limitations
 
 - Limited register files: Using bits for the shifter and immediates in the extended ISA resulted in a trade-off where we could not add significantly more register files. This constraint impacted the custom CPU's ability to handle a larger number of variables and intermediate values simultaneously, which in turn could affect the overall performance and efficiency of the CPU.
 
@@ -65,4 +67,4 @@ In the process of extending the ISA, we faced certain limitations due to the des
 
 - Backward compatibility: Maintaining compatibility with the base ISA imposed restrictions on the addition of new instructions or modifications to existing instructions. This limitation might have influenced the design choices made while extending the ISA, potentially leading to suboptimal designs or limiting the overall performance improvements that could be achieved.
 
-Despite these limitations, the extended ISA successfully provides additional ALU operations, logical shifts, and support for ALU and Memory immediates, which contribute to the custom CPU's enhanced performance and flexibility. However, it is essential to acknowledge the trade-offs made in the design process to achieve these improvements while understanding the impact of these choices on the CPU's overall capabilities.
+Despite these limitations, the extended ISA successfully provides additional ALU operations, logical shifts, and support for ALU and Memory immediates, which contribute to the custom CPU's enhanced performance and flexibility.
