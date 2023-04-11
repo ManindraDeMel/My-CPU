@@ -1191,7 +1191,7 @@ The PC is always either incrementing or loading a new value, (always written to)
 Hence the PC is its own register</string>
         </entry>
       </elementAttributes>
-      <pos x="-1760" y="260"/>
+      <pos x="-380" y="-380"/>
     </visualElement>
     <visualElement>
       <elementName>alu-extended.dig</elementName>

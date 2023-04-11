@@ -42,7 +42,7 @@
             "class": "mem"
         },
         "STR (imm)": {
-            "syntax": "STR? <RD:reg>, <IMM7:uint7>",
+            "syntax": "STR? <RD:reg>, [<IMM7:uint7>]",
             "machine": "0111 C RD 0 IMM7",
             "semantic": "mem[IMM7] := RD",
             "description": "Stores the value in RD in memory at the address at IMM7",
@@ -58,7 +58,7 @@
             "class": "mem"
         },
         "LDR (imm)": {
-            "syntax": "LDR? <RD:reg>, <IMM7:uint7>",
+            "syntax": "LDR? <RD:reg>, [<IMM7:uint7>]",
             "machine": "0111 C RD 1 IMM7",
             "semantic": "RD := mem[IMM7]",
             "description": "Loads the 16 bit value from the address IMM7 into RD",
